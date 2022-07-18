@@ -25,6 +25,7 @@ export interface Options {
   message?: string        // 弹窗内文字
   offset?: number         // 弹窗距离顶部
   center?: boolean        // 文字居中
+  showData?: boolean      // 显示复制内容
 }
 ```
 ## License
