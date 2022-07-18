@@ -1,7 +1,7 @@
 {
   "name": "copy-str",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "packageManager": "pnpm@7.2.1",
   "description": "",
   "author": "Jeffrey-mu <1115378579@qq.com>",
