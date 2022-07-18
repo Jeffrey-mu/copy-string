@@ -2,7 +2,7 @@ import type { Message, RemoveChildOptions } from './type'
 const map = new Map()
 const set = new Set()
 let timeFlag = null
-export default function createMessage(message: Message) {
+export default function createMessage(data: string, message: Message) {
   if (set.size) {
     set.forEach(key => {
       map.get(key)()
@@ -11,7 +11,7 @@ export default function createMessage(message: Message) {
   const body = document.querySelector('body') as HTMLBodyElement
   const Elemt = document.createElement('div')
   const p = document.createElement('p')
-  const ElemtStyle: string[] = ['position&fixed', 'top&20px', 'width&100%', `textAlign&${message.center || ''}`, 'display&flex', 'flexDirection&center', 'transition&all .2s']
+  const ElemtStyle: string[] = ['position&fixed', 'top&0px', 'width&100%', `textAlign&${message.center || ''}`, 'display&flex', 'flexDirection&center', 'transition&all .2s']
   ElemtStyle.forEach((style) => {
     // @ts-ignore
     Elemt.style[style.split('&')[0]] = style.split('&')[1]
@@ -22,12 +22,21 @@ export default function createMessage(message: Message) {
     // @ts-ignore
     p.style[style.split('&')[0]] = style.split('&')[1]
   })
-  p.innerText = message.message || '复制成功'
+  p.innerText = `${message.message || '复制成功！'} ${message.showData ? data : ''}`
   const time: number = +new Date()
   set.add(time)
   map.set(time, removeChild(body, Elemt, message))
   Elemt.appendChild(p)
   body.appendChild(Elemt)
+  setTimeout(() => {
+    let i = -4
+    const time = setInterval(() => {
+      i += 2
+      Elemt.style.top = `${i}px`
+      if (i === 30)
+        clearInterval(time)
+    }, 10)
+  })
 }
 
 function removeChild(box: HTMLElement, removeEl: HTMLElement, options: RemoveChildOptions) {
