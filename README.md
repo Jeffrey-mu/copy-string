@@ -1,7 +1,7 @@
 # copy-str
 ## Install
 ```shell
-pnpm install --save copt-str
+pnpm install --save copy-str
 ```
 
 ## Use
