@@ -4,6 +4,7 @@ export interface Options {
   message?: string
   offset?: number
   center?: boolean
+  showData?: boolean
 }
 export interface Message extends Options {
 

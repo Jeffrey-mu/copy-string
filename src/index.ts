@@ -9,12 +9,7 @@ export default function copy(data: string, options = {} as Options): boolean {
     input.select()
     document.execCommand('Copy')
     body.removeChild(input)
-    !options.showMessage && Message({
-      message: options.message || '复制成功',
-      duration: options.duration || 3000,
-      center: options.center,
-
-    })
+    !options.showMessage && Message(data, options)
     return true
   }
   else {
