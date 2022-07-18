@@ -1,15 +1,32 @@
-# pkg-name
+# copy-str
+## Install
+```shell
+pnpm install --save copt-str
+```
 
-[![NPM version](https://img.shields.io/npm/v/pkg-name?color=a1b858&label=)](https://www.npmjs.com/package/pkg-name)
+## Use
 
-## Sponsors
+```vue
+<template>
+  <button class="container" onclick="copy('data')">copy</button>
+</template>
+<script setip>
+import copy from "copt-str";
+</script>
 
-<p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/antfu/static/sponsors.svg">
-    <img src='https://cdn.jsdelivr.net/gh/antfu/static/sponsors.svg'/>
-  </a>
-</p>
+```
+### 参数
 
+```ts
+copy(data: string /*复制内容*/, options: Options /*可选参数*/)
+export interface Options {
+  showMessage?: boolean   // 是否显示弹窗
+  duration?: number       // 出现时长
+  message?: string        // 弹窗内文字
+  offset?: number         // 弹窗距离顶部
+  center?: boolean        // 文字居中
+}
+```
 ## License
 
-[MIT](./LICENSE) License © 2022 [Anthony Fu](https://github.com/antfu)
+[MIT] License © 2022 [Jeffrey-mu](https://github.com/Jeffrey-mu)
