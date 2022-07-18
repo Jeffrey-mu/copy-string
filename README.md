@@ -11,7 +11,7 @@ pnpm install --save copy-str
   <button class="container" onclick="copy('data')">copy</button>
 </template>
 <script setip>
-import copy from "copt-str";
+import copy from "copy-str";
 </script>
 
 ```
