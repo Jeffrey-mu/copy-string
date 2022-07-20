@@ -1,5 +1,6 @@
 import type { Options } from './type'
 import Message from './Message'
+export { Message }
 export default function copy(data: string, options = {} as Options): boolean {
   if (data) {
     const input = document.createElement('input')
