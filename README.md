@@ -1,25 +1,31 @@
 # copy-str
+- Copy text using JavaScript
 ## Install
 ```shell
 pnpm install --save copy-str
 ```
 
-## Use
+## Usage example
 
 ```vue
-<template>
-  <button class="container" onclick="copy('data')">copy</button>
-</template>
 <script setip>
-import copy from "copy-str";
+import copy from 'copy-str'
 </script>
 
+<template>
+  <button class="container" onclick="copy('data')">
+    copy
+  </button>
+</template>
+
 ```
-### 参数
+### argment
 
 ```ts
-copy(data: string /*复制内容*/, options: Options /*可选参数*/)
+copy(data: string /*复制内容*/, options: Options /*可选参数*/): boolean
+export type Type = 'success' | 'error' | 'warning' | 'info'
 export interface Options {
+  type: Type              // 弹窗样式
   showMessage?: boolean   // 是否显示弹窗
   duration?: number       // 出现时长
   message?: string        // 弹窗内文字
@@ -30,4 +36,4 @@ export interface Options {
 ```
 ## License
 
-[MIT](./LICENSE) License © 2022 [Jeffrey-mu](https://github.com/Jeffrey-mu)
+[MIT](./LICENSE) License © 2022 [Jeffrey](https://github.com/Jeffrey-mu)
